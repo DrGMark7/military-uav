@@ -275,7 +275,7 @@ int main() {
             e.end();
         }
 
-        // F14 : prohibit drone flying directly launch -> rendezvous     
+        // F14 : prohibit drone flying directly launch -> rendezvous  (launch and rendezvous must be separated by at least one node)   
         for (int i : d.N0) for (int k : d.Nplus) {
             if (k==i) continue;
             for (int b=0;b<B;++b) for (int s=0;s<S;++s)
