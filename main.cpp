@@ -281,8 +281,8 @@ int main() {
             for (int b=0;b<B;++b) for (int s=0;s<S;++s)
                 model.add(y[b][s][i][k] + z[b][s][i][k] <= 1).setName("F14");
         }
-
-        // F15 : each drone-only node visited at most once per sortie    
+        """
+        // F15 : each drone-only node visited at most once per sortie    (we are most liekly don't need this one)
         for (int i : d.Cprime) for (int s=0;s<S;++s) {
             IloExpr e(env);
             for (int b=0;b<B;++b)
@@ -290,7 +290,7 @@ int main() {
             model.add(e <= 1).setName("F15");
             e.end();
         }
-
+        """
         // Miscellaneous constraints 
         // M1 : x_ii = 0                                                    
         for (int i=0;i<N;++i) model.add(x[i][i] == 0);
